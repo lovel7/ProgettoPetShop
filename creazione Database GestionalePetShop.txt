@@ -1,0 +1,20 @@
+create schema GestionalePetShop;
+
+-- rendere database default schema
+
+CREATE TABLE `utente` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  `Cognome` varchar(255) NOT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Cellulare` bigint DEFAULT NULL,
+  `Data_di_nascita` varchar(225) DEFAULT NULL,
+  `Password` varchar(155) DEFAULT NULL,
+  `UserName` varchar(155) DEFAULT NULL,
+	`Ruolo` varchar(155) DEFAULT 'G',
+  `Stato` varchar(155) DEFAULT 'A',
+  PRIMARY KEY (`ID`)
+);
+
+ALTER TABLE utente
+ADD COLUMN Tentativi_Falliti INT DEFAULT 0;
